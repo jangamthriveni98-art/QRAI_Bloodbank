@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+body{margin:0;font-family:Arial;background:#f5f3ff}
+.header{background:#4a0a1a;color:white;text-align:center;padding:20px}
+.nav{background:white;text-align:center;padding:12px}
+.nav a{margin:0 15px;color:#4a0a1a;font-weight:bold;text-decoration:none}
+.card{width:60%;margin:20px auto;background:white;border-radius:10px;padding:20px}
+table{width:100%;border-collapse:collapse}
+th{background:#7a132e;color:white;padding:14px}
+td{padding:14px;text-align:center;border-bottom:1px solid #eee}
+</style></head>
+<body>
+<div class="header"><h2>🩸 QRAI BloodBank - ALTS</h2><p>QR Based Smart BloodBank Management System</p></div>
+<div class="nav"><a href="/">Home</a><a href="/add_blood">Add Blood</a><a href="/add_donor">Add Donor</a><a href="/search_donor">Search & Find Donor</a></div>
+<div class="card">
+<table>
+<tr><th>Blood Group</th><th>QR Code</th></tr>
+{% for bg, units, exp in data %}
+<tr><td style="color:#7a132e;font-weight:bold;font-size:18px">{{bg}}</td><td><img src="/static/qrs/{{bg}}.png" width="80"></td></tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

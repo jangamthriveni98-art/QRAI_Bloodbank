@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+body{margin:0;font-family:Arial;background:#f5f3ff}
+.header{background:#2b0a14;color:white;text-align:center;padding:30px 20px}
+.nav{background:white;text-align:center;padding:15px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.nav a{margin:0 20px;color:#4a0a1a;text-decoration:none;font-size:16px}
+.card{width:80%;margin:20px auto;background:white;padding:20px;border-radius:10px}
+table{width:100%;border-collapse:collapse}th{background:#7a132e;color:white;padding:10px}td{padding:10px;text-align:center;border-bottom:1px solid #eee}
+</style></head>
+<body>
+<div class="header"><h2>🩸 QRAI BloodBank - ALTS</h2><p>QR Based Smart BloodBank Management System</p></div>
+<div class="nav"><a href="/">Home</a><a href="/add_blood">Add Blood</a><a href="/add_donor">Add Donor</a><a href="/search_donor">Search & Find Donor</a></div>
+<div style="text-align:center;padding:15px;background:white">
+<form><select name="blood_group" onchange="this.form.submit()"><option>All Groups</option><option>A+</option><option>O+</option><option>B+</option><option>AB+</option><option>A-</option><option>B-</option><option>O-</option><option>AB-</option></select></form>
+</div>
+<div class="card"><table><tr><th>Name</th><th>Blood Group</th><th>Phone</th><th>Location</th></tr>
+{% for d in donors %}<tr><td>{{d[1]}}</td><td style="color:#7a132e;font-weight:bold">{{d[2]}}</td><td>{{d[3]}}</td><td>{{d[4]}}</td></tr>{% endfor %}
+</table></div>
+</body>
+</html>
